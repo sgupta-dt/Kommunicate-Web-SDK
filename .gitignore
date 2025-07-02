@@ -14,3 +14,4 @@ webplugin/css/app/style/
 
 # Sentry Config File
 .sentryclirc
+.idea/
