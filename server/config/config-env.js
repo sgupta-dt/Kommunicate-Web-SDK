@@ -1,5 +1,6 @@
 const configEnv = {
-    development: {
+    // development: {
+    _development: {
         port: '3030',
         urls: {
             applozicBaseUrl: 'https://chat-test.kommunicate.io',
@@ -118,13 +119,15 @@ const configEnv = {
         },
     },
 
-    prod: {
+    // prod: {
+    development: {
         port: '3030',
         urls: {
             applozicBaseUrl: 'https://chat.kommunicate.io',
             kommunicateBaseUrl: 'https://api.kommunicate.io',
             botPlatformApi: 'https://bots.kommunicate.io',
-            hostUrl: 'https://widget.kommunicate.io',
+            // hostUrl: 'https://widget.kommunicate.io',
+            hostUrl: 'http://localhost:3030',
             dashboardUrl: 'https://dashboard.kommunicate.io',
         },
         pluginProperties: {
