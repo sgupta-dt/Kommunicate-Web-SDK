@@ -1912,7 +1912,7 @@ const firstVisibleMsg = {
                     );
                 } else {
                     return (
-                        '<div id="mck-sidebox-launcher" class="mck-sidebox-launcher launchershadow n-vis"><a href="#" target="_self" aria-label="Open Chat" role="button" tabindex="0" aria-live="polite" class="applozic-launcher">' +
+                        '<div id="custom-welcome-box"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p><button onclick="">+ add files</button></div><div id="mck-sidebox-launcher" class="mck-sidebox-launcher launchershadow n-vis"><a href="#" target="_self" aria-label="Open Chat" role="button" tabindex="0" aria-live="polite" class="applozic-launcher">' +
                         CHAT_CLOSE_BUTTON +
                         (CUSTOM_CHAT_LAUNCHER ? customLauncherHtml : defaultHtml) +
                         '<div id="launcher-agent-img-container" class="n-vis"></div></a><div id="applozic-badge-count" class="applozic-badge-count"></div>' +
