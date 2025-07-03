@@ -97,10 +97,12 @@
                     // };
 
                     var kommunicateSettings = {
-                        appId: '15a73c233bf026518f76b6f090841e2a6',
+                        appId: appId,
                         popupWidget: true,
                         automaticChatOpenOnNavigation: true,
                         onInit: function () {
+                            Kommunicate.updateSettings(defaultSettings);
+
                             Kommunicate.customizeWidgetCss(`
 							div#mck-agent-status-text {
 								visibility: hidden !important;
@@ -117,10 +119,6 @@
 								background-color: #2bef84 !important;
 							}
 							`);
-
-                            // Kommunicate.launchConversation();
-                            // var launcherIcon = KommunicateGlobal.document.getElementById('mck-sidebox-launcher')
-                            // launcherIcon && launcherIcon.click();
                         },
                         labels: {
                             'conversation.handoff': {
