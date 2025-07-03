@@ -1,6 +1,6 @@
 const configEnv = {
-    development: {
-        //_development: {
+    // development: {
+    _development: {
         port: '3030',
         urls: {
             applozicBaseUrl: 'https://chat-test.kommunicate.io',
