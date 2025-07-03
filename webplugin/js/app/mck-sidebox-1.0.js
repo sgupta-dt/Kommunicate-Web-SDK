@@ -1912,7 +1912,8 @@ const firstVisibleMsg = {
                     );
                 } else {
                     return (
-                        '<div id="custom-welcome-box"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p><button onclick="">+ add files</button></div><div id="mck-sidebox-launcher" class="mck-sidebox-launcher launchershadow n-vis"><a href="#" target="_self" aria-label="Open Chat" role="button" tabindex="0" aria-live="polite" class="applozic-launcher">' +
+                        '<div id="custom-welcome-box"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p><button onclick="">+ add files</button></div>' +
+                        '<div id="mck-sidebox-launcher" class="mck-sidebox-launcher launchershadow n-vis"><a href="#" target="_self" aria-label="Open Chat" role="button" tabindex="0" aria-live="polite" class="applozic-launcher">' +
                         CHAT_CLOSE_BUTTON +
                         (CUSTOM_CHAT_LAUNCHER ? customLauncherHtml : defaultHtml) +
                         '<div id="launcher-agent-img-container" class="n-vis"></div></a><div id="applozic-badge-count" class="applozic-badge-count"></div>' +
@@ -1933,7 +1934,7 @@ const firstVisibleMsg = {
                         '<div class="mck-row mck-preview-content">' +
                         '<div class="mck-preview-msg-content"></div>' +
                         '<div class="mck-preview-file-content mck-msg-text notranslate blk-lg-12 mck-attachment n-vis"></div>' +
-                        '</div></div></div><div id="mck-msg-preview-btns" class="n-vis"><button id="mck-vid-call-accept">Accept</button><button id="mck-vid-call-reject">reject</div></div>'
+                        '</div></div></div><div id="mck-msg-preview-btns" class="n-vis"><button id="mck-vid-call-accept">Accept</button><button id="mck-vid-call-reject">Reject</button></div></div>'
                     );
                 }
             };
