@@ -3890,8 +3890,6 @@ const firstVisibleMsg = {
                 });
 
                 $applozic(d).on('click', '#mck-sidebox-launcher', function () {
-                    document.getElementById('dt-custom-welcome-box').classList.add('n-vis');
-                    document.getElementById('dt-custom-welcome-box').classList.remove('vis');
                     document.getElementById('launcher-agent-img-container').classList.add('n-vis');
                     document.getElementById('launcher-agent-img-container').classList.remove('vis');
                     if (typeof CUSTOM_CHAT_LAUNCHER !== 'undefined') {
