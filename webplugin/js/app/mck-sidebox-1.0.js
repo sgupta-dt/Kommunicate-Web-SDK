@@ -1912,7 +1912,7 @@ const firstVisibleMsg = {
                     );
                 } else {
                     return (
-                        '<div id="dt-custom-welcome-box" class="dt-custom-welcome-box n-vis"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p> </br> <button onclick="" style="display: none;">+ add files</button></div>' +
+                        '<div id="dt-custom-welcome-box" class="dt-custom-welcome-box vis"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p> </br> <button onclick="" style="display: none;">+ add files</button></div>' +
                         '<div id="mck-sidebox-launcher" class="mck-sidebox-launcher launchershadow n-vis"><a href="#" target="_self" aria-label="Open Chat" role="button" tabindex="0" aria-live="polite" class="applozic-launcher">' +
                         CHAT_CLOSE_BUTTON +
                         (CUSTOM_CHAT_LAUNCHER ? customLauncherHtml : defaultHtml) +
@@ -2121,14 +2121,13 @@ const firstVisibleMsg = {
                                         'dt-anonymous-custom-welcome-box'
                                     );
 
-                                    dtCustomWelcomeBox.classList.remove('vis');
-                                    dtCustomWelcomeBox.classList.add('n-vis');
-
                                     !POPUP_WIDGET &&
                                         (kmAnonymousChatLauncher.classList.remove('vis'),
-                                        kmAnonymousChatLauncher.classList.add('n-vis'),
-                                        dtAnonymousCustomWelcomeBox.classList.remove('vis'),
-                                        dtAnonymousCustomWelcomeBox.classList.add('n-vis'));
+                                        kmAnonymousChatLauncher.classList.add('n-vis'));
+
+                                    dtAnonymousCustomWelcomeBox.classList.remove('vis');
+                                    dtAnonymousCustomWelcomeBox.classList.add('n-vis');
+
                                     mckInit.clearMsgTriggerAndChatPopuTimeouts();
                                 }
                             );
@@ -3888,6 +3887,7 @@ const firstVisibleMsg = {
                     $applozic('#mck-msg-new').attr('disabled', true);
                     mckInit.clearMsgTriggerAndChatPopuTimeouts();
                 });
+
                 $applozic(d).on('click', '#mck-sidebox-launcher', function () {
                     document.getElementById('dt-custom-welcome-box').classList.add('n-vis');
                     document.getElementById('dt-custom-welcome-box').classList.remove('vis');
