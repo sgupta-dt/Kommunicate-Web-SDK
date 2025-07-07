@@ -1912,7 +1912,7 @@ const firstVisibleMsg = {
                     );
                 } else {
                     return (
-                        '<div id="custom-welcome-box"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p> </br> <button onclick="" style="display: none;">+ add files</button></div>' +
+                        '<div id="dt-custom-welcome-box" class="vis"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p> </br> <button onclick="" style="display: none;">+ add files</button></div>' +
                         '<div id="mck-sidebox-launcher" class="mck-sidebox-launcher launchershadow n-vis"><a href="#" target="_self" aria-label="Open Chat" role="button" tabindex="0" aria-live="polite" class="applozic-launcher">' +
                         CHAT_CLOSE_BUTTON +
                         (CUSTOM_CHAT_LAUNCHER ? customLauncherHtml : defaultHtml) +
@@ -3869,6 +3869,8 @@ const firstVisibleMsg = {
                     mckInit.clearMsgTriggerAndChatPopuTimeouts();
                 });
                 $applozic(d).on('click', '#mck-sidebox-launcher', function () {
+                    document.getElementById('dt-custom-welcome-box').classList.add('n-vis');
+                    document.getElementById('dt-custom-welcome-box').classList.remove('vis');
                     document.getElementById('launcher-agent-img-container').classList.add('n-vis');
                     document.getElementById('launcher-agent-img-container').classList.remove('vis');
                     if (typeof CUSTOM_CHAT_LAUNCHER !== 'undefined') {
