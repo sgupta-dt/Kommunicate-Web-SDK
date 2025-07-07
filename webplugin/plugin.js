@@ -62,8 +62,8 @@ var kmCustomIframe =
     '    width: 442px; ' +
     '} \n ' +
     '.km-iframe-closed{ ' +
-    '    height: 75px; ' +
-    '    width:  75px; ' +
+    '    height: 400px; ' +
+    '    width:  440px; ' +
     '    box-shadow: none!important; ' +
     '} \n' +
     '.mck-restrict-scroll{ ' +
