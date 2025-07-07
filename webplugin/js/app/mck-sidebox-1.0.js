@@ -5076,6 +5076,7 @@ const firstVisibleMsg = {
                 KommunicateUI.showClosedConversationBanner(false);
                 $mck_sidebox.mckModal('hide');
                 $applozic('#mck-sidebox-launcher').removeClass('n-vis').addClass('vis');
+                $applozic('#dt-custom-welcome-box').removeClass('n-vis').addClass('vis');
                 if (
                     document
                         .getElementById('launcher-agent-img-container')
