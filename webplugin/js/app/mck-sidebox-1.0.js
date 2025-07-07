@@ -3552,6 +3552,7 @@ const firstVisibleMsg = {
                 Kommunicate.startConversation(params, callback);
             };
             _this.openChatbox = function (params, callback) {
+                $applozic('#dt-custom-welcome-box').removeClass('vis').addClass('n-vis');
                 kmWidgetEvents.eventTracking(eventMapping.onChatWidgetOpen);
                 kommunicateCommons.setWidgetStateOpen(true);
                 if ($mck_sidebox.css('display') === 'none') {
