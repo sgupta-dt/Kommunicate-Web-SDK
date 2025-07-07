@@ -160,7 +160,7 @@ $popupClass: '.chat-popup-widget-container';
     box-shadow: none;
 }
 
-#dt-custom-welcome-box {
+.dt-custom-welcome-box {
     visibility: visible;
     display: block;
     position: fixed !important;
@@ -178,7 +178,7 @@ $popupClass: '.chat-popup-widget-container';
     bottom: 29px;
     text-rendering: optimizeLegibility;
 }
-//   #dt-custom-welcome-box {
+//   .dt-custom-welcome-box {
 //     position: fixed;
 //     bottom: 100px;
 //     right: 100px;
@@ -192,13 +192,13 @@ $popupClass: '.chat-popup-widget-container';
 //     z-index: 9999;
 //   }
 
-#dt-custom-welcome-box p {
+.dt-custom-welcome-box p {
     margin: 0 0 10px;
     font-size: 14px;
     line-height: 1.3;
 }
 
-#dt-custom-welcome-box button {
+.dt-custom-welcome-box button {
     font-size: 14px;
     padding: 4px 10px;
     background: #fff;

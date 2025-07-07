@@ -1912,7 +1912,7 @@ const firstVisibleMsg = {
                     );
                 } else {
                     return (
-                        '<div id="dt-custom-welcome-box" class="vis"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p> </br> <button onclick="" style="display: none;">+ add files</button></div>' +
+                        '<div id="dt-custom-welcome-box" class="dt-custom-welcome-box n-vis"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p> </br> <button onclick="" style="display: none;">+ add files</button></div>' +
                         '<div id="mck-sidebox-launcher" class="mck-sidebox-launcher launchershadow n-vis"><a href="#" target="_self" aria-label="Open Chat" role="button" tabindex="0" aria-live="polite" class="applozic-launcher">' +
                         CHAT_CLOSE_BUTTON +
                         (CUSTOM_CHAT_LAUNCHER ? customLauncherHtml : defaultHtml) +
@@ -2047,6 +2047,9 @@ const firstVisibleMsg = {
                             'km-anonymous-chat-launcher'
                         );
                         var kmChatLoginModal = document.getElementById('km-chat-login-modal');
+                        var dtAnonymousCustomWelcomeBox = document.getElementById(
+                            'dt-anonymous-custom-welcome-box'
+                        );
 
                         if (KOMMUNICATE_VERSION === 'v2') {
                             //intialise onInit in prechatLead Collection
@@ -2075,6 +2078,8 @@ const firstVisibleMsg = {
                         kmChatLoginModal.style.display = 'none';
                         kmAnonymousChatLauncher.classList.remove('n-vis');
                         kmAnonymousChatLauncher.classList.add('vis');
+                        dtAnonymousCustomWelcomeBox.classList.remove('n-vis');
+                        dtAnonymousCustomWelcomeBox.classList.add('vis');
                         document
                             .getElementById('km-modal-close')
                             .addEventListener('click', _this.closeLeadCollectionWindow);
@@ -2111,9 +2116,19 @@ const firstVisibleMsg = {
                                                 '0 1.5rem 2rem rgba(0,0,0,.3)');
                                     }
                                     kmChatLoginModal.style.display = 'block';
+
+                                    var dtAnonymousCustomWelcomeBox = document.getElementById(
+                                        'dt-anonymous-custom-welcome-box'
+                                    );
+
+                                    dtCustomWelcomeBox.classList.remove('vis');
+                                    dtCustomWelcomeBox.classList.add('n-vis');
+
                                     !POPUP_WIDGET &&
                                         (kmAnonymousChatLauncher.classList.remove('vis'),
-                                        kmAnonymousChatLauncher.classList.add('n-vis'));
+                                        kmAnonymousChatLauncher.classList.add('n-vis'),
+                                        dtAnonymousCustomWelcomeBox.classList.remove('vis'),
+                                        dtAnonymousCustomWelcomeBox.classList.add('n-vis'));
                                     mckInit.clearMsgTriggerAndChatPopuTimeouts();
                                 }
                             );
@@ -2236,6 +2251,9 @@ const firstVisibleMsg = {
             _this.closeLeadCollectionWindow = function () {
                 var kmChatLoginModal = document.getElementById('km-chat-login-modal');
                 var kmAnonymousChatLauncher = document.getElementById('km-anonymous-chat-launcher');
+                var dtAnonymousCustomWelcomeBox = document.getElementById(
+                    'dt-anonymous-custom-welcome-box'
+                );
 
                 if (KOMMUNICATE_VERSION === 'v2') {
                     var kommunicateIframe = parent.document.getElementById(
@@ -2252,6 +2270,8 @@ const firstVisibleMsg = {
                 kmChatLoginModal.style.display = 'none';
                 kmAnonymousChatLauncher.classList.remove('n-vis');
                 kmAnonymousChatLauncher.classList.add('vis');
+                dtAnonymousCustomWelcomeBox.classList.remove('n-vis');
+                dtAnonymousCustomWelcomeBox.classList.add('vis');
             };
 
             _this.onInitApp = function (data) {
