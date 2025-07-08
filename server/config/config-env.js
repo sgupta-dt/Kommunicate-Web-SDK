@@ -125,6 +125,7 @@ const configEnv = {
             kommunicateBaseUrl: 'https://api.kommunicate.io',
             botPlatformApi: 'https://bots.kommunicate.io',
             // hostUrl: 'https://widget.kommunicate.io',
+            // hostUrl: 'http://localhost:3030',
             hostUrl: 'https://daytranslations.com/kommchatbot',
             dashboardUrl: 'https://dashboard.kommunicate.io',
         },
