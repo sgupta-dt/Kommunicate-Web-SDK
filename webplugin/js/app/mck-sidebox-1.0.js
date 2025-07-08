@@ -2584,6 +2584,7 @@ const firstVisibleMsg = {
                 // handle click events for openning and closing of sidebox
                 kommunicateIframe.style.display = 'block';
                 var popUpcloseButton = document.getElementById('km-popup-close-button');
+
                 chatbox.addEventListener('click', function () {
                     kommunicateCommons.setWidgetStateOpen(true);
                     kommunicateIframe.classList.remove('km-iframe-closed');
@@ -2600,6 +2601,11 @@ const firstVisibleMsg = {
                         : kommunicateIframe.classList.add('km-iframe-dimension-no-popup');
                     POPUP_WIDGET && _this.configurePopupWidget();
                 });
+                document
+                    .getElementById('dt-custom-welcome-box')
+                    .addEventListener('click', function () {
+                        chatbox.click();
+                    });
                 var closeButton = document.getElementById('km-chat-widget-close-button');
                 function closeChatBox() {
                     kmWidgetEvents.eventTracking(eventMapping.onChatWidgetClose);
@@ -4357,7 +4363,11 @@ const firstVisibleMsg = {
                 });
                 $applozic(d).on(
                     'click',
-                    '.' + MCK_LAUNCHER + ', .mck-contact-list .' + MCK_LAUNCHER,
+                    '.' +
+                        MCK_LAUNCHER +
+                        ', .mck-contact-list .' +
+                        MCK_LAUNCHER +
+                        ', .dt-custom-welcome-box',
                     function (e) {
                         e.preventDefault();
                         $mck_business_hours_box.addClass('n-vis');
