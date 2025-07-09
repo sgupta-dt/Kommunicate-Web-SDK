@@ -2601,11 +2601,6 @@ const firstVisibleMsg = {
                         : kommunicateIframe.classList.add('km-iframe-dimension-no-popup');
                     POPUP_WIDGET && _this.configurePopupWidget();
                 });
-                document
-                    .getElementById('dt-custom-welcome-box')
-                    .addEventListener('click', function () {
-                        chatbox.click();
-                    });
                 var closeButton = document.getElementById('km-chat-widget-close-button');
                 function closeChatBox() {
                     kmWidgetEvents.eventTracking(eventMapping.onChatWidgetClose);
