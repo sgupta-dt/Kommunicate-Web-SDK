@@ -118,7 +118,7 @@ const configEnv = {
         },
     },
 
-    development: {
+    prod: {
         port: '3030',
         urls: {
             applozicBaseUrl: 'https://chat.kommunicate.io',
