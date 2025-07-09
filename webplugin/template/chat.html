@@ -10,7 +10,7 @@
 
     <body>
         <div id="error-msg"></div>
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
             function splitByComma(inputString) {
                 if (!inputString) return;
 
@@ -131,7 +131,8 @@
                     var s = document.createElement('script');
                     s.type = 'text/javascript';
                     s.async = true;
-                    s.src = '/kommchatbot/v2/kommunicate.app';
+                    // s.src = '/v2/kommunicate.app';
+                    s.src = 'https://daytranslations.com/kommchatbot/v2/kommunicate.app';
                     var h = document.getElementsByTagName('head')[0];
                     h.appendChild(s);
                     window.kommunicate = m;
@@ -140,6 +141,121 @@
                     window.kommunicate.IFRAME_OVERRIDES.GROUP_CREATION_URL = referer;
                 })(document, window.kommunicate || {});
             }
+        </script>-->
+
+        <script type="text/javascript">
+            function kommunicatedelay() {
+                function openChatWindow() {
+                    try {
+                        // console.log('Kommunicate++', Kommunicate);
+                        // console.log('Kommunicate._globals++', Kommunicate._globals);
+                        if (Kommunicate && Kommunicate._globals) {
+                            let isAnonymousChat = KommunicateGlobal.document.getElementById(
+                                'km-anonymous-chat-launcher'
+                            );
+                            // console.log('isAnonymousChat++', isAnonymousChat);
+
+                            isAnonymousChat
+                                ? KommunicateGlobal.document
+                                      .getElementById('km-anonymous-chat-launcher')
+                                      .click()
+                                : Kommunicate.launchConversation();
+
+                            if (typeof Kommunicate.onUserCreate === 'undefined') {
+                                Kommunicate.onUserCreate = function (user) {
+                                    if (!user) return;
+                                    fetch('https://kommautomate.daydevelopers.com/user/created', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({
+                                            name: user.displayName || '',
+                                            email: user.email || '',
+                                            phone: user.phoneNumber || '',
+                                        }),
+                                    }).catch((err) =>
+                                        console.error(
+                                            'openChatWindow onUserCreate Webhook call failed:',
+                                            err
+                                        )
+                                    );
+                                };
+                            }
+                        }
+                    } catch (err) {
+                        console.log('openChatWindow error', err);
+                    }
+                }
+
+                var chatNow = document.getElementById('open-chat');
+                // console.log('chatNow++', chatNow);
+
+                if (chatNow) {
+                    chatNow.addEventListener('click', openChatWindow);
+                }
+
+                setTimeout(() => {
+                    openChatWindow();
+                }, 1000); // 3 seconds delay
+            }
+
+            (function (d, m) {
+                var kommunicateSettings = {
+                    appId: '15a73c233bf026518f76b6f090841e2a6',
+                    popupWidget: true,
+                    // 'automaticChatOpenOnNavigation': true,
+                    conversationListMode: 0, // 0: open, 1: closed, 2: all
+                    // 'onInit': function() {
+                    //     Kommunicate.customizeWidgetCss(`
+                    // 	div#mck-agent-status-text {
+                    // 		visibility: hidden !important;
+                    // 		position: relative;
+                    // 	}
+                    // 	div#mck-agent-status-text::after {
+                    // 		content: "Online";
+                    // 		visibility: visible;
+                    // 		position: absolute;
+                    // 		left: 0;
+                    // 		top: 0;
+                    // 	}
+                    // 	span.mck-agent-status-indicator {
+                    // 		background-color: #2bef84 !important;
+                    // 	}
+                    // 	`);
+                    // },
+                    // 'labels': {
+                    //     'conversation.handoff': {
+                    //         ASSIGN_TO: 'Please hold for our next available PM. We can\'t wait to chat with you!',
+                    //     },
+                    // },
+                };
+
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = '/v2/kommunicate.app';
+                // s.src = 'https://daytranslations.com/kommchatbot/v2/kommunicate.app';
+                var h = document.getElementsByTagName('head')[0];
+                h.appendChild(s);
+                window.kommunicate = m;
+                m._globals = kommunicateSettings;
+                window.kommunicate.IFRAME_OVERRIDES = {};
+                window.kommunicate.IFRAME_OVERRIDES.GROUP_CREATION_URL = window.document.referrer;
+            })(document, window.kommunicate || {});
+
+            /* NOTE : Use web server to view HTML files as real - time update will not work if you directly open the HTML file in the browser. */
+            const kommChatOpenInterval = setInterval(function () {
+                // console.log('setInterval kommunicatedelay called++');
+                if (
+                    typeof Kommunicate !== 'undefined' &&
+                    typeof Kommunicate.launchConversation === 'function'
+                ) {
+                    console.log('Kommunicate is available++');
+                    clearInterval(kommChatOpenInterval);
+                    kommunicatedelay();
+                } else {
+                    // console.log('Kommunicate is not available yet++');
+                }
+            }, 100);
         </script>
     </body>
 </html>

@@ -1,34 +1,34 @@
 const configEnv = {
-    development: {
-        port: '3030',
-        urls: {
-            applozicBaseUrl: 'https://chat-test.kommunicate.io',
-            kommunicateBaseUrl: 'https://api-test.kommunicate.io',
-            botPlatformApi: 'https://bots-test.kommunicate.io',
-            hostUrl: 'http://localhost:3030',
-            dashboardUrl: 'https://dashboard-test.kommunicate.io',
-        },
-        pluginProperties: {
-            pseudoNameEnabled: true,
-        },
-        thirdPartyIntegration: {
-            sentry: {
-                nameSpace: '0494b01c401dbac92222bf85f41e26a0',
-                dsn:
-                    'https://0494b01c401dbac92222bf85f41e26a0@o4508295387480064.ingest.us.sentry.io/4508295388790784',
-                PROJECT: 'test-widget',
-                ORG: 'kommunicateio',
-                PROJECT: 'widget-test',
-                AUTH_TOKEN:
-                    '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',
-                enabled: false,
-            },
-            aws: {
-                cdnUrl: 'https://cdn-test.kommunicate.io',
-                bucket: 'kom-test-cdn',
-            },
-        },
-    },
+    // development: {
+    //     port: '3030',
+    //     urls: {
+    //         applozicBaseUrl: 'https://chat-test.kommunicate.io',
+    //         kommunicateBaseUrl: 'https://api-test.kommunicate.io',
+    //         botPlatformApi: 'https://bots-test.kommunicate.io',
+    //         hostUrl: 'http://localhost:3030',
+    //         dashboardUrl: 'https://dashboard-test.kommunicate.io',
+    //     },
+    //     pluginProperties: {
+    //         pseudoNameEnabled: true,
+    //     },
+    //     thirdPartyIntegration: {
+    //         sentry: {
+    //             nameSpace: '0494b01c401dbac92222bf85f41e26a0',
+    //             dsn:
+    //                 'https://0494b01c401dbac92222bf85f41e26a0@o4508295387480064.ingest.us.sentry.io/4508295388790784',
+    //             PROJECT: 'test-widget',
+    //             ORG: 'kommunicateio',
+    //             PROJECT: 'widget-test',
+    //             AUTH_TOKEN:
+    //                 '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',
+    //             enabled: false,
+    //         },
+    //         aws: {
+    //             cdnUrl: 'https://cdn-test.kommunicate.io',
+    //             bucket: 'kom-test-cdn',
+    //         },
+    //     },
+    // },
     test_agenticfirst: {
         port: '3030',
         urls: {
@@ -118,15 +118,15 @@ const configEnv = {
         },
     },
 
-    prod: {
+    development: {
         port: '3030',
         urls: {
             applozicBaseUrl: 'https://chat.kommunicate.io',
             kommunicateBaseUrl: 'https://api.kommunicate.io',
             botPlatformApi: 'https://bots.kommunicate.io',
             // hostUrl: 'https://widget.kommunicate.io',
-            // hostUrl: 'http://localhost:3030',
-            hostUrl: 'https://daytranslations.com/kommchatbot',
+            hostUrl: 'http://localhost:3030',
+            // hostUrl: 'https://daytranslations.com/kommchatbot',
             dashboardUrl: 'https://dashboard.kommunicate.io',
         },
         pluginProperties: {
