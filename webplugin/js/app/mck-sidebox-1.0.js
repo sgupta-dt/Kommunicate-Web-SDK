@@ -1912,7 +1912,7 @@ const firstVisibleMsg = {
                     );
                 } else {
                     return (
-                        '<div id="dt-custom-welcome-box" class="dt-custom-welcome-box vis"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p> </br> <button onclick="" style="display: none;">+ add files</button></div>' +
+                        '<div id="dt-custom-welcome-box" class="dt-custom-welcome-box applozic-launcher vis"><p><strong>Welcome to Day Translations.</strong></br> How may we help you? </br> This chat is powered by humans.</p> </br> <button onclick="" style="display: none;">+ add files</button></div>' +
                         '<div id="mck-sidebox-launcher" class="mck-sidebox-launcher launchershadow n-vis"><a href="#" target="_self" aria-label="Open Chat" role="button" tabindex="0" aria-live="polite" class="applozic-launcher">' +
                         CHAT_CLOSE_BUTTON +
                         (CUSTOM_CHAT_LAUNCHER ? customLauncherHtml : defaultHtml) +
@@ -4363,11 +4363,7 @@ const firstVisibleMsg = {
                 });
                 $applozic(d).on(
                     'click',
-                    '.' +
-                        MCK_LAUNCHER +
-                        ', .mck-contact-list .' +
-                        MCK_LAUNCHER +
-                        ', .dt-custom-welcome-box',
+                    '.' + MCK_LAUNCHER + ', .mck-contact-list .' + MCK_LAUNCHER,
                     function (e) {
                         e.preventDefault();
                         $mck_business_hours_box.addClass('n-vis');
