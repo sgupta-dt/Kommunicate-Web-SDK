@@ -206,7 +206,7 @@ function createKommunicateIframe() {
     kommunicateIframe.setAttribute('id', 'kommunicate-widget-iframe');
     kommunicateIframe.setAttribute('title', 'Live chat');
     kommunicateIframe.setAttribute('name', 'Kommunicate widget iframe');
-    kommunicateIframe.setAttribute('class', 'kommunicate-custom-iframe');
+    kommunicateIframe.setAttribute('class', 'kommunicate-custom-iframe km-iframe-closed');
     kommunicateIframe.setAttribute('data-protocol', window.location.protocol);
     kommunicateIframe.setAttribute('data-url', window.location.href);
     document.body.appendChild(kommunicateIframe);
