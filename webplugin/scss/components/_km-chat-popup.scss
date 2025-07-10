@@ -160,42 +160,6 @@ $popupClass: '.chat-popup-widget-container';
     box-shadow: none;
 }
 
-.dt-custom-welcome-box {
-    visibility: visible;
-    display: block;
-    position: fixed !important;
-    right: -34px !important;
-    max-height: 98px !important;
-    left: auto !important;
-    padding: 15px;
-    z-index: 224350 !important;
-    line-height: 18px;
-    max-width: 434px !important;
-    margin: 10px 34px 0 !important;
-    box-shadow: 2px 3px 10px 2px rgba(139, 133, 133, 0.5);
-    border: 5px double #f2b400;
-    border-radius: 10px !important;
-    bottom: 29px;
-    text-rendering: optimizeLegibility;
-    cursor: pointer;
-    background-color: #fff;
-}
-
-.dt-custom-welcome-box p {
-    margin: 0 0 10px;
-    font-size: 14px;
-    line-height: 1.3;
-}
-
-.dt-custom-welcome-box button {
-    font-size: 14px;
-    padding: 4px 10px;
-    background: #fff;
-    border: 2px solid #000;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
 #launcher-svg-container.km-animate {
     @include prefix(transform, scale(1), webkit moz o ms);
     @include prefix(animation, km-scale-animation 0.5s ease-in-out 1 forwards, webkit moz o ms);
@@ -486,3 +450,41 @@ $popupClass: '.chat-popup-widget-container';
     }
 }
 /* Chat Popup Template Code Ends */
+
+/* DT Custom Code Ends */
+.dt-custom-welcome-box {
+    visibility: visible;
+    display: block;
+    position: fixed !important;
+    right: -34px !important;
+    max-height: 98px !important;
+    left: auto !important;
+    padding: 15px;
+    z-index: 224350 !important;
+    line-height: 18px;
+    max-width: 434px !important;
+    margin: 10px 34px 0 !important;
+    box-shadow: 2px 3px 10px 2px rgba(139, 133, 133, 0.5);
+    border: 5px double #f2b400;
+    border-radius: 10px !important;
+    bottom: 29px;
+    text-rendering: optimizeLegibility;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.dt-custom-welcome-box p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.dt-custom-welcome-box button {
+    font-size: 14px;
+    padding: 4px 10px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* DT Custom Code Ends */
